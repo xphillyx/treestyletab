@@ -31,15 +31,22 @@ export function isInitialized() {
 }
 
 export function isSidebarOpen(windowId) {
-  if (!mConnections)
+console.log('isSidebarOpen ', windowId);
+  if (!mConnections) {
+console.log(' => null mConnections');
     return false;
+  }
   const connections = mConnections.get(windowId);
-  if (!connections)
+  if (!connections) {
+console.log(' => no connections');
     return false;
+  }
   for (const connection of connections) {
+console.log(' type: ', connection.type);
     if (connection.type == 'sidebar')
       return true;
   }
+console.log(' => no sidebar connection');
   return false;
 }
 

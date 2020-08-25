@@ -74,9 +74,13 @@ Background.onDestroy.addListener(() => {
 
 
 function onToolbarButtonClick(tab) {
-  if (Permissions.requestPostProcess())
+console.log('onToolbarButtonClick ', tab);
+  if (Permissions.requestPostProcess()) {
+console.log(' => Permissions.requestPostProcess');
     return;
+  }
 
+console.log(` SidebarConnection.isSidebarOpen(${tab.windowId}) `, SidebarConnection.isSidebarOpen(tab.windowId));
   if (SidebarConnection.isSidebarOpen(tab.windowId))
     browser.sidebarAction.close();
   else
