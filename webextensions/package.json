@@ -18,5 +18,8 @@
     "minimist": ">=1.2.2",
     "morphdom": "^2.5.12",
     "tunnel-agent": ">=0.6.0"
+  },
+  "dependencies": {
+    "codemirror": "^5.57.0"
   }
 }
